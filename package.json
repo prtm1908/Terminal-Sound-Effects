@@ -3,7 +3,7 @@
   "displayName": "Terminal Sound Effects",
   "description": "Plays a sound effect when a terminal command fails",
   "version": "1.0.0",
-  "publisher": "pratham",
+  "publisher": "PrathamBatra",
   "engines": {
     "vscode": "^1.93.0"
   },
