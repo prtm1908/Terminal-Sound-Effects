@@ -1,0 +1,7 @@
+src/**
+.gitignore
+tsconfig.json
+**/*.map
+node_modules/**
+Gemini_Generated_Image_*
+.vscode/**

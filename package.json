@@ -1,0 +1,80 @@
+{
+  "name": "terminal-sfx",
+  "displayName": "Terminal Sound Effects",
+  "description": "Plays a sound effect when a terminal command fails",
+  "version": "1.0.0",
+  "publisher": "pratham",
+  "engines": {
+    "vscode": "^1.93.0"
+  },
+  "icon": "media/logo.png",
+  "categories": ["Other"],
+  "activationEvents": ["onStartupFinished"],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "terminal-sfx.openLibrary",
+        "title": "Terminal Sound Effects: Open Sound Library"
+      },
+      {
+        "command": "terminal-sfx.selectFile",
+        "title": "Terminal Sound Effects: Select Sound File"
+      },
+      {
+        "command": "terminal-sfx.toggle",
+        "title": "Terminal Sound Effects: Toggle On/Off"
+      }
+    ],
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "terminal-sfx",
+          "title": "Terminal Sound Effects",
+          "icon": "media/icon.svg"
+        }
+      ]
+    },
+    "views": {
+      "terminal-sfx": [
+        {
+          "type": "webview",
+          "id": "terminal-sfx.sidebar",
+          "name": "Sound Library"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "Terminal Sound Effects",
+      "properties": {
+        "terminalSfx.enabled": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable or disable error sound effects"
+        },
+        "terminalSfx.selectedSound": {
+          "type": "string",
+          "default": "faah",
+          "description": "Name of built-in sound, or absolute path to a WAV/MP3 file"
+        },
+        "terminalSfx.volume": {
+          "type": "number",
+          "default": 80,
+          "minimum": 0,
+          "maximum": 100,
+          "description": "Playback volume (0–100)"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "@types/vscode": "^1.93.0",
+    "typescript": "^5.5.0"
+  }
+}
