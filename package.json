@@ -4,6 +4,11 @@
   "description": "Plays a sound effect when a terminal command fails",
   "version": "1.0.0",
   "publisher": "PrathamBatra",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/prtm1908/Terminal-Sound-Effects"
+  },
   "engines": {
     "vscode": "^1.93.0"
   },
